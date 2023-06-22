@@ -6,8 +6,8 @@
         <artifactId>dibros</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>imagens</artifactId>
-    <name>imagens</name>
+    <artifactId>imagem</artifactId>
+    <name>imagem</name>
     <description>Modulo de imagens do projeto</description>
 
     <dependencies>
@@ -26,7 +26,7 @@
     </repositories>
 
     <build>
-        <finalName>imagens</finalName>
+        <finalName>imagem</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
