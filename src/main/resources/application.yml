@@ -1,0 +1,22 @@
+server:
+  port: 5005
+spring:
+  application:
+    name: imagem
+  servlet:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: https://dibros-eureka.up.railway.app/eureka/
+
+jwt:
+  config:
+    login-url: /auth/login
+    type: signed
+
