@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.nio.file.FileSystemLoopException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,11 +23,11 @@ public class ImagemService {
         if(files==null) return null;
         List<String> imagens = new ArrayList<String>();
         for(MultipartFile file : files) {
-            File f = new File("D:/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename());
+            File f = new File("C:/Users/ricar/Desktop/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename());
             int i = 0;
             while (!f.createNewFile() && i < 100)
-                f = new File("D:/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename().split("\\.")[0] + (++i) + "." + file.getOriginalFilename().split("\\.")[1]);
-            try (OutputStream os = new FileOutputStream(f)) {
+                f = new File("C:/Users/ricar/Desktop/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename().split("\\.")[0] + (++i) + "." + file.getOriginalFilename().split("\\.")[1]);
+            try (OutputStream os = Files.newOutputStream(f.toPath())) {
                 os.write(file.getBytes());
                 os.flush();
                 imagens.add("/imagem/public/imagens/" + f.getName());
