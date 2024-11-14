@@ -23,10 +23,10 @@ public class ImagemService {
         if(files==null) return null;
         List<String> imagens = new ArrayList<String>();
         for(MultipartFile file : files) {
-            File f = new File("C:/Users/ricar/Desktop/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename());
+            File f = new File("C:/Users/ricar/OneDrive/Área de Trabalho/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename());
             int i = 0;
             while (!f.createNewFile() && i < 100)
-                f = new File("C:/Users/ricar/Desktop/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename().split("\\.")[0] + (++i) + "." + file.getOriginalFilename().split("\\.")[1]);
+                f = new File("C:/Users/ricar/OneDrive/Área de Trabalho/Projects/SERVIDOR - PROD -/imagens/" + file.getOriginalFilename().split("\\.")[0] + (++i) + "." + file.getOriginalFilename().split("\\.")[1]);
             try (OutputStream os = Files.newOutputStream(f.toPath())) {
                 os.write(file.getBytes());
                 os.flush();
