@@ -1,7 +1,17 @@
 server:
   port: 5005
 
+spring:
+  application:
+    name: imagem
+  r2dbc:
+    url: r2dbc:mysql://127.0.0.1:3306/dibros?allowPublicKeyRetrieval=true&sslMode=DISABLED&useTimezone=true&serverTimezone=UTC
+    username: root
+    password: root
+
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:7081/eureka/
