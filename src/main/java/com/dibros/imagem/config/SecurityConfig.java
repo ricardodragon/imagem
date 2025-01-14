@@ -30,15 +30,4 @@ public class SecurityConfig extends TokenConfig {
         http.addFilterAt(new JwtTokenAuthorizationFilter(), SecurityWebFiltersOrder.AUTHORIZATION);
         return super.configure(http);
     }
-
-    @Order(Ordered.HIGHEST_PRECEDENCE)
-    @Bean
-    CorsWebFilter corsFilter() {
-        CorsConfiguration config = new CorsConfiguration().applyPermitDefaultValues();
-        config.setAllowCredentials(true);
-        config.setAllowedOriginPatterns(Collections.singletonList("*"));
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
-        return new CorsWebFilter(source);
-    }
 }
