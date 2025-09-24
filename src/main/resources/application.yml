@@ -1,22 +1,18 @@
 server:
   port: 5005
+
 spring:
   application:
     name: imagem
-  servlet:
-    multipart:
-      max-file-size: 3MB
-      max-request-size: 3MB
+  r2dbc:
+    url: r2dbc:mysql://127.0.0.1:3306/dibros?allowPublicKeyRetrieval=true&sslMode=DISABLED&useTimezone=true&serverTimezone=UTC
+    username: root
+    password: root
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
-      defaultZone: https://dibros-eureka.up.railway.app/eureka/
-
-jwt:
-  config:
-    login-url: /auth/login
-    type: signed
+      defaultZone: http://localhost:7081/eureka/
 
