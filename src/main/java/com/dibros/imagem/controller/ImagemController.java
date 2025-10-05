@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 
 @RestController
@@ -20,7 +20,7 @@ public class ImagemController {
     private final ImagemService imagemService;
 
     @PostMapping
-    public Flux<String> postImagens(@RequestPart("files") Flux<FilePart> files) throws Exception {
-        return this.imagemService.testeImagem(files);
+    public Mono<String> postImagens(@RequestPart("files") FilePart file) throws Exception {
+        return this.imagemService.testeImagem(file);
     }
 }
