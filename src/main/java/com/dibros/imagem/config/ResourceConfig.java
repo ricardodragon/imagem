@@ -11,6 +11,6 @@ public class ResourceConfig implements WebFluxConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry){
         resourceHandlerRegistry
             .addResourceHandler("/public/imagens/**")
-            .addResourceLocations("file:///C:/Users/ricar/OneDrive/Área de Trabalho/Projects/SERVIDOR - PROD -/imagens/");
+            .addResourceLocations("file:///C:/Users/ricar/Desktop/projects/SERVIDOR - PROD -/imagens/");
     }
 }

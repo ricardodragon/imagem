@@ -18,11 +18,11 @@ import java.nio.file.StandardCopyOption;
 public class ImagemService {
 
     public Mono<String> testeImagem(FilePart file) {
-        File f = new File("C:/Users/ricar/OneDrive/Área de Trabalho/Projects/SERVIDOR - PROD -/imagens/" + file.filename());
+        File f = new File("C:/Users/ricar/Desktop/projects/SERVIDOR - PROD -/imagens/" + file.filename());
         for (int i = 0; i < 100; i++) {
             try {
                 if (!f.createNewFile())
-                    f = new File("C:/Users/ricar/OneDrive/Área de Trabalho/Projects/SERVIDOR - PROD -/imagens/" + file.filename().split("\\.")[0] + i + "." + file.filename().split("\\.")[1]);
+                    f = new File("C:/Users/ricar/Desktop/projects/SERVIDOR - PROD -/imagens/" + file.filename().split("\\.")[0] + i + "." + file.filename().split("\\.")[1]);
                 else break;
             } catch (IOException e) {
                 log.info(e.getMessage());
