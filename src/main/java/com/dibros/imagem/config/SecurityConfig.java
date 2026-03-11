@@ -20,10 +20,6 @@ import java.util.Collections;
 @EnableWebFluxSecurity
 public class SecurityConfig extends TokenConfig {
 
-    public SecurityConfig() {
-        this.getUrls().add("/public/imagens/*");
-    }
-
     @Bean
     @Override
     public SecurityWebFilterChain configure(ServerHttpSecurity http){
