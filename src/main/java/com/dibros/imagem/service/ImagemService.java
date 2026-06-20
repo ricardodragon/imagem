@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -18,6 +19,7 @@ import java.nio.file.StandardCopyOption;
 public class ImagemService {
 
     public Mono<String> testeImagem(FilePart file) {
+        if(Objects.isNull(file)) return Mono.empty();
         File f = new File("C:/Users/ricar/Desktop/projects/SERVIDOR - PROD -/imagens/" + file.filename());
         for (int i = 0; i < 100; i++) {
             try {

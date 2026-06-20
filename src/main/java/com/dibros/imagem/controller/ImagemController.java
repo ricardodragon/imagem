@@ -20,7 +20,7 @@ public class ImagemController {
     private final ImagemService imagemService;
 
     @PostMapping
-    public Mono<String> postImagens(@RequestPart("files") FilePart file) throws Exception {
+    public Mono<String> postImagens(@RequestPart(value = "files", required = false) FilePart file) throws Exception {
         return this.imagemService.testeImagem(file);
     }
 }
